@@ -29,8 +29,10 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         Bullet.h Bullet.cpp
         Enemyplane.h Enemyplane.cpp
         Bomb.h Bomb.cpp
+        Enemybullet.h Enemybullet.cpp
+        Mainsence2.h Mainsence2.cpp
+        Map2.h Map2.cpp
 
-        Startwidget.h Startwidget.cpp Startwidget.ui
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET PlaneWar APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

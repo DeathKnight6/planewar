@@ -1,4 +1,4 @@
-#include "Map1.h"
+#include "Map2.h"
 #include "config.h"
 
 Map::Map() {

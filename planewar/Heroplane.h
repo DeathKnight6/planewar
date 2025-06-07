@@ -11,6 +11,7 @@ class HeroPlane
 public:
     HeroPlane();
 
+
     //发射子弹
     void shoot();
     //设置飞机位置
@@ -51,7 +52,7 @@ private:
     // 飞机血量
     int m_health;
     // 最大血量
-    const int m_maxHealth = 1000;
+    const int m_maxHealth = 100;
     //-----------------------------------------------------------------25.5.22
 };
 
