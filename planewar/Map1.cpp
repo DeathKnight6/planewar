@@ -1,7 +1,7 @@
 #include "Map1.h"
 #include "config.h"
 
-Map::Map() {
+Map1::Map1() {
     //初始化地图加载对象
     m_map1.load(MAP_PATH1);
     m_map2.load(MAP_PATH1);
@@ -14,7 +14,7 @@ Map::Map() {
     m_scroll_speed = MAP_SCROLL_SPEED;
 }
 
-void Map::mapPosition()
+void Map1::mapPosition()
 {
     //处理第一张图片滚动位置
     m_map1_posY += m_scroll_speed;

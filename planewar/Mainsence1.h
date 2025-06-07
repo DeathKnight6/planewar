@@ -9,15 +9,25 @@
 #include "bullet.h"
 #include "Enemyplane.h"
 #include "Bomb.h"
+#include <QList>
 
 
-class Mainsence1 : public QWidget
+
+class Mainsence : public QWidget
 {
     Q_OBJECT
 
 public:
-    Mainsence1(QWidget *parent = nullptr);
-    ~Mainsence1();
+    enum Level {
+        LEVEL_ONE,
+        LEVEL_TWO,
+        LEVEL_THREE,
+        LEVEL_COMPLETED
+    };                 //关卡升级设计
+
+public:
+    Mainsence(QWidget *parent = nullptr);
+    ~Mainsence();
 
     //初始化场景
     void initSence();
@@ -35,7 +45,7 @@ public:
     void mouseMoveEvent(QMouseEvent *);
 
     //地图对象
-    Map m_map;
+    Map1 m_map;
 
     //飞机对象
     HeroPlane m_hero;
@@ -58,6 +68,31 @@ public:
     //敌机出场间隔记录
     int m_recorder;
 
+    //初始化关卡
+    void initLevel(Level level);
 
+signals:
+    void gameOver();  // 添加游戏结束信号
+
+private:
+
+    //创建积分列表
+    int m_score;
+
+    Level m_currentLevel;     // 当前关卡
+    QTimer m_transitionTimer; // 转场计时器
+    int m_transitionAlpha;    // 转场透明度
+    bool m_inTransition;      // 是否在转场中
+    Level m_nextLevel;        // 下一关
+
+    // 地图对象数组，每个关卡对应不同的背景
+    Map1 m_maps[3];  // 三个关卡对应三个地图
+    int m_currentMapIndex;  // 当前使用的地图索引
+
+
+private slots:
+    void checkLevelUp();// 声明关卡转化函数1
+    void startLevelTransition(Level nextLevel);//声明关卡转化函数2
+    void updateTransition();//声明关卡转变完成函数
 };
 #endif // MAINSENCE1_H

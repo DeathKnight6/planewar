@@ -27,43 +27,6 @@ EnemyPlane::EnemyPlane()
     m_Rect.moveTo(m_X,m_Y);
 }
 
-//发射子弹
-void EnemyPlane::shoot()
-{
-    // 射击间隔控制
-    m_shootTimer++;
-    if (m_shootTimer < ENEMY_SHOOT_INTERVAL) {
-        return;
-    }
-
-    m_shootTimer = 0;
-
-    // 随机发射子弹（增加游戏趣味性）
-    if (QRandomGenerator::global()->bounded(100) < 30) {
-       return;
-    }
-
-    // 发射子弹
-    for (int i = 0; i < ENEMY_BULLET_NUM; i++) {
-        if (m_bullets[i].m_Free) {
-            // 设置子弹位置（从敌机底部中央发射）
-            m_bullets[i].m_Xe = m_X + m_Rect.width() / 2 - m_bullets[i].m_Rect.width() / 2;
-            m_bullets[i].m_Ye = m_Y + m_Rect.height();
-            m_bullets[i].m_Free = false;
-            break;
-        }
-    }
-}
-
-//设置敌机子弹伤害
-void EnemyPlane::setBulletDamage(int damage)
-{
-    for (int i = 0; i < ENEMY_BULLET_NUM; i++)
-    {
-        m_bullets[i].setDamage(damage);
-    }
-}
-
 void EnemyPlane::updatePosition()
 {
     //空闲状态敌机 不计算坐标
@@ -94,6 +57,12 @@ void EnemyPlane::setHealth(int health)
     m_health = qBound(0, health, m_maxHealth);//设置health的最小值和最大值
 }
 
+void EnemyPlane::setSpeed(int speed)
+{
+    //设置速度
+    m_speed = ENEMY_SPEED;
+}
+
 void EnemyPlane::reduceHealth(int damage)
 {
     //减少血量
@@ -111,6 +80,5 @@ void EnemyPlane::reset()
     //重置飞机状态
     m_health = m_maxHealth;
     m_Free = true;
-    m_shootTimer = 0;
 }
 //------------------------------------------------------------------------
