@@ -9,8 +9,13 @@ EnemyPlane::EnemyPlane()
     m_health = m_maxHealth;
     //--------------------------------------------------5.22
     //敌机资源加载
+<<<<<<< HEAD
     m_enemy1.load(ENEMY_PATH1);
     m_enemy2.load(ENEMY_PATH2);
+=======
+    m_enemy.load(ENEMY_PATH);
+
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
     //敌机位置
     m_X = 0;
     m_Y = 0;
@@ -22,10 +27,15 @@ EnemyPlane::EnemyPlane()
     m_Speed = ENEMY_SPEED;
 
     //敌机矩形框
+<<<<<<< HEAD
     m_Rect.setWidth(m_enemy1.width());
     m_Rect.setHeight(m_enemy1.height());
     m_Rect.setWidth(m_enemy2.width());
     m_Rect.setHeight(m_enemy2.height());
+=======
+    m_Rect.setWidth(m_enemy.width());
+    m_Rect.setHeight(m_enemy.height());
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
     m_Rect.moveTo(m_X,m_Y);
 }
 
@@ -33,7 +43,10 @@ EnemyPlane::EnemyPlane()
 void EnemyPlane::shoot()
 {
     // 射击间隔控制
+<<<<<<< HEAD
     int m_shootTimer = 0;
+=======
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
     m_shootTimer++;
     if (m_shootTimer < ENEMY_SHOOT_INTERVAL) {
         return;

@@ -35,7 +35,11 @@ public:
     void mouseMoveEvent(QMouseEvent *);
 
     //地图对象
+<<<<<<< HEAD
     Map1 m_map;
+=======
+    Map m_map;
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
 
     //飞机对象
     HeroPlane m_hero;

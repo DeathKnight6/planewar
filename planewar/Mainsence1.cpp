@@ -7,7 +7,11 @@
 #include <QCoreApplication>
 #include <QAudioOutput>
 
+<<<<<<< HEAD
 Mainsence1::Mainsence1(QWidget *parent)
+=======
+Mainsence::Mainsence(QWidget *parent)
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
     : QWidget(parent)
 {
     //调用初始化窗口函数
@@ -18,9 +22,15 @@ Mainsence1::Mainsence1(QWidget *parent)
 
 }
 
+<<<<<<< HEAD
 Mainsence1::~Mainsence1() {}
 
 void Mainsence1::initSence()
+=======
+Mainsence::~Mainsence() {}
+
+void Mainsence::initSence()
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
 {
     //设置窗口固定
     setFixedSize(GAME_WIDTH,GAME_HEIGHT);
@@ -50,7 +60,11 @@ void Mainsence1::initSence()
     }
 }
 
+<<<<<<< HEAD
 void Mainsence1::playGame()
+=======
+void Mainsence::playGame()
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
 {
 
 
@@ -70,7 +84,11 @@ void Mainsence1::playGame()
     });
 }
 
+<<<<<<< HEAD
 void Mainsence1::updatePosition()
+=======
+void Mainsence::updatePosition()
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
 {
     //更新地图坐标
     m_map.mapPosition();
@@ -94,7 +112,11 @@ void Mainsence1::updatePosition()
         if(m_enemys[i].m_Free == false)
         {
             m_enemys[i].updatePosition();
+<<<<<<< HEAD
             m_enemys[i].shoot();
+=======
+             m_enemys[i].shoot();
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
 
             //更新敌机子弹位置
             for (int j = 0; j < ENEMY_BULLET_NUM; j++)
@@ -118,7 +140,11 @@ void Mainsence1::updatePosition()
 
 }
 
+<<<<<<< HEAD
 void Mainsence1::paintEvent(QPaintEvent *)
+=======
+void Mainsence::paintEvent(QPaintEvent *)
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
 {
     QPainter painter(this);
 
@@ -146,7 +172,11 @@ void Mainsence1::paintEvent(QPaintEvent *)
     {
         if(m_enemys[i].m_Free == false)
         {
+<<<<<<< HEAD
             painter.drawPixmap(m_enemys[i].m_X,m_enemys[i].m_Y,m_enemys[i].m_enemy1);
+=======
+            painter.drawPixmap(m_enemys[i].m_X,m_enemys[i].m_Y,m_enemys[i].m_enemy);
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
 
             //绘制敌机子弹
             for (int j = 0; j < ENEMY_BULLET_NUM; j++)
@@ -171,7 +201,11 @@ void Mainsence1::paintEvent(QPaintEvent *)
     }
 }
 
+<<<<<<< HEAD
 void Mainsence1::mouseMoveEvent(QMouseEvent *event)
+=======
+void Mainsence::mouseMoveEvent(QMouseEvent *event)
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
 {
     QPointF pos = event->position();
     qreal x = pos.x() - m_hero.m_Rect.width()*0.5;
@@ -198,7 +232,11 @@ void Mainsence1::mouseMoveEvent(QMouseEvent *event)
     m_hero.setPosition(x,y);
 }
 
+<<<<<<< HEAD
 void Mainsence1::enemyToScene()
+=======
+void Mainsence::enemyToScene()
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
 {
     m_recorder++;
     //未达到出场间隔 直接return
@@ -223,7 +261,11 @@ void Mainsence1::enemyToScene()
     }
 }
 
+<<<<<<< HEAD
 void Mainsence1::collisionDetection()
+=======
+void Mainsence::collisionDetection()
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
 {
     // 我方子弹与敌机碰撞检测
     for (int i = 0; i < ENEMY_NUM1; i++)

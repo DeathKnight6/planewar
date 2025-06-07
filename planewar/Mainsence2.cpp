@@ -7,7 +7,11 @@
 #include <QCoreApplication>
 #include <QAudioOutput>
 
+<<<<<<< HEAD
 Mainsence2::Mainsence2(QWidget *parent)
+=======
+Mainsence::Mainsence(QWidget *parent)
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
     : QWidget(parent)
 {
     //调用初始化窗口函数
@@ -18,9 +22,15 @@ Mainsence2::Mainsence2(QWidget *parent)
 
 }
 
+<<<<<<< HEAD
 Mainsence2::~Mainsence2() {}
 
 void Mainsence2::initSence()
+=======
+Mainsence::~Mainsence() {}
+
+void Mainsence::initSence()
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
 {
     //设置窗口固定
     setFixedSize(GAME_WIDTH,GAME_HEIGHT);
@@ -50,7 +60,11 @@ void Mainsence2::initSence()
     }
 }
 
+<<<<<<< HEAD
 void Mainsence2::playGame()
+=======
+void Mainsence::playGame()
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
 {
 
 
@@ -70,7 +84,11 @@ void Mainsence2::playGame()
             });
 }
 
+<<<<<<< HEAD
 void Mainsence2::updatePosition()
+=======
+void Mainsence::updatePosition()
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
 {
     //更新地图坐标
     m_map.mapPosition();
@@ -118,7 +136,11 @@ void Mainsence2::updatePosition()
 
 }
 
+<<<<<<< HEAD
 void Mainsence2::paintEvent(QPaintEvent *)
+=======
+void Mainsence::paintEvent(QPaintEvent *)
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
 {
     QPainter painter(this);
 
@@ -146,7 +168,11 @@ void Mainsence2::paintEvent(QPaintEvent *)
     {
         if(m_enemys[i].m_Free == false)
         {
+<<<<<<< HEAD
             painter.drawPixmap(m_enemys[i].m_X,m_enemys[i].m_Y,m_enemys[i].m_enemy2);
+=======
+            painter.drawPixmap(m_enemys[i].m_X,m_enemys[i].m_Y,m_enemys[i].m_enemy);
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
 
             //绘制敌机子弹
             for (int j = 0; j < ENEMY_BULLET_NUM; j++)
@@ -171,7 +197,11 @@ void Mainsence2::paintEvent(QPaintEvent *)
     }
 }
 
+<<<<<<< HEAD
 void Mainsence2::mouseMoveEvent(QMouseEvent *event)
+=======
+void Mainsence::mouseMoveEvent(QMouseEvent *event)
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
 {
     QPointF pos = event->position();
     qreal x = pos.x() - m_hero.m_Rect.width()*0.5;
@@ -198,17 +228,29 @@ void Mainsence2::mouseMoveEvent(QMouseEvent *event)
     m_hero.setPosition(x,y);
 }
 
+<<<<<<< HEAD
 void Mainsence2::enemyToScene()
 {
     m_recorder++;
     //未达到出场间隔 直接return
     if(m_recorder < ENEMY_INTERVAL2)
+=======
+void Mainsence::enemyToScene()
+{
+    m_recorder++;
+    //未达到出场间隔 直接return
+    if(m_recorder < ENEMY_INTERVAL1)
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
     {
         return;
     }
     m_recorder = 0;
 
+<<<<<<< HEAD
     for(int i = 0; i < ENEMY_NUM2; i++)
+=======
+    for(int i = 0; i < ENEMY_NUM1; i++)
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
     {
         //如果是空闲敌机 出场
         if(m_enemys[i].m_Free)
@@ -223,10 +265,17 @@ void Mainsence2::enemyToScene()
     }
 }
 
+<<<<<<< HEAD
 void Mainsence2::collisionDetection()
 {
     // 我方子弹与敌机碰撞检测
     for (int i = 0; i < ENEMY_NUM2; i++)
+=======
+void Mainsence::collisionDetection()
+{
+    // 我方子弹与敌机碰撞检测
+    for (int i = 0; i < ENEMY_NUM1; i++)
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
     {
         if (m_enemys[i].m_Free || !m_enemys[i].isAlive()) continue;
 

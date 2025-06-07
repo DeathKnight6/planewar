@@ -35,7 +35,11 @@ public:
     void mouseMoveEvent(QMouseEvent *);
 
     //地图对象
+<<<<<<< HEAD
     Map2 m_map;
+=======
+    Map m_map;
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
 
     //飞机对象
     HeroPlane m_hero;
@@ -53,11 +57,19 @@ public:
     void collisionDetection();
 
     //敌机数组
+<<<<<<< HEAD
     EnemyPlane m_enemys[ENEMY_NUM2];
+=======
+    EnemyPlane m_enemys[ENEMY_NUM1];
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
 
     //敌机出场间隔记录
     int m_recorder;
 
 
 };
+<<<<<<< HEAD
 #endif // MAINSENCE2_H
+=======
+#endif // MAINSENCE1_H
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07

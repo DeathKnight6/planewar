@@ -1,14 +1,24 @@
 #ifndef ENEMYBULLET_H
 #define ENEMYBULLET_H
+<<<<<<< HEAD
 #include "BOSSbullet.h"
+=======
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
 #include <QPixmap>
 #include <QRect>
 
 //子弹方向
+<<<<<<< HEAD
 /*enum BulletDirection {
     DOWN,  // 向下（默认）
     UP     // 向上
 };*/
+=======
+enum BulletDirection {
+    DOWN,  // 向下（默认）
+    UP     // 向上
+};
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
 
 class EnemyBullet
 {
