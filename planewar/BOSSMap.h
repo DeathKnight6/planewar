@@ -1,19 +1,15 @@
-#ifndef MAP2_H
-#define MAP2_H
+#ifndef BOSSMAP_H
+#define BOSSMAP_H
 #include <QPixmap>
 
-class Map2
+class BOSSMap
 {
 public:
-    Map2();
+    BOSSMap();
 
     //地图滚动坐标计算
     void mapPosition();
-<<<<<<< HEAD
 
-=======
-public:
->>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
     //地图图片对象
     QPixmap m_map1;
     QPixmap m_map2;
@@ -26,8 +22,4 @@ public:
     int m_scroll_speed;
 };
 
-<<<<<<< HEAD
-#endif // MAP2_H
-=======
-#endif // MAP1_H
->>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
+#endif // BOSSMAP_H

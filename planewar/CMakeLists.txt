@@ -29,6 +29,23 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         Bullet.h Bullet.cpp
         Enemyplane.h Enemyplane.cpp
         Bomb.h Bomb.cpp
+<<<<<<< HEAD
+=======
+        Enemybullet.h Enemybullet.cpp
+<<<<<<< HEAD
+        Map2.h Map2.cpp
+        Mainsence2.h Mainsence2.cpp
+        BOSS.h BOSS.cpp
+        BOSSbullet.h BOSSbullet.cpp
+        BOSSMainsence.h BOSSMainsence.cpp
+        BOSSMap.h BOSSMap.cpp
+
+
+=======
+        Mainsence2.h Mainsence2.cpp
+        Map2.h Map2.cpp
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
+>>>>>>> a3360dcda2f7081c1d5798175957bfbb12eb66ce
 
         Startwidget.h Startwidget.cpp Startwidget.ui
     )

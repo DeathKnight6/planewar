@@ -7,7 +7,11 @@
 #include <QCoreApplication>
 #include <QAudioOutput>
 
+<<<<<<< HEAD
+Mainsence1::Mainsence1(QWidget *parent)
+=======
 Mainsence::Mainsence(QWidget *parent)
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
     : QWidget(parent)
 {
     //调用初始化窗口函数
@@ -17,9 +21,15 @@ Mainsence::Mainsence(QWidget *parent)
     playGame();
 }
 
+<<<<<<< HEAD
+Mainsence1::~Mainsence1() {}
+
+void Mainsence1::initSence()
+=======
 Mainsence::~Mainsence() {}
 
 void Mainsence::initSence()
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
 {
     //设置窗口固定
     setFixedSize(GAME_WIDTH,GAME_HEIGHT);
@@ -67,7 +77,11 @@ void Mainsence::initSence()
     m_currentMapIndex = 0;
 }
 
+<<<<<<< HEAD
+void Mainsence1::playGame()
+=======
 void Mainsence::playGame()
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
 {
     //启动定时器
     m_Timer.start();
@@ -85,6 +99,7 @@ void Mainsence::playGame()
             });
 }
 
+<<<<<<< HEAD
 //---------------------------------------------------------------------
 
 //初始化关卡
@@ -189,7 +204,13 @@ void Mainsence::updateTransition()
 
 //---------------------------------------------------------------------------------------------
 
+=======
+<<<<<<< HEAD
+void Mainsence1::updatePosition()
+=======
+>>>>>>> a3360dcda2f7081c1d5798175957bfbb12eb66ce
 void Mainsence::updatePosition()
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
 {
     //更新地图坐标
     m_map.mapPosition();
@@ -215,6 +236,23 @@ void Mainsence::updatePosition()
         if(m_enemys[i].m_Free == false)
         {
             m_enemys[i].updatePosition();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            m_enemys[i].shoot();
+=======
+             m_enemys[i].shoot();
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
+
+            //更新敌机子弹位置
+            for (int j = 0; j < ENEMY_BULLET_NUM; j++)
+            {
+                if (!m_enemys[i].m_bullets[j].m_Free)
+                {
+                    m_enemys[i].m_bullets[j].updatePosition();
+                }
+            }
+>>>>>>> a3360dcda2f7081c1d5798175957bfbb12eb66ce
         }
     }
 
@@ -229,7 +267,11 @@ void Mainsence::updatePosition()
 
 }
 
+<<<<<<< HEAD
+void Mainsence1::paintEvent(QPaintEvent *)
+=======
 void Mainsence::paintEvent(QPaintEvent *)
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
 {
     QPainter painter(this);
 
@@ -253,7 +295,25 @@ void Mainsence::paintEvent(QPaintEvent *)
     {
         if(m_enemys[i].m_Free == false)
         {
+<<<<<<< HEAD
+            painter.drawPixmap(m_enemys[i].m_X,m_enemys[i].m_Y,m_enemys[i].m_enemy1);
+=======
             painter.drawPixmap(m_enemys[i].m_X,m_enemys[i].m_Y,m_enemys[i].m_enemy);
+<<<<<<< HEAD
+=======
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
+
+            //绘制敌机子弹
+            for (int j = 0; j < ENEMY_BULLET_NUM; j++)
+            {
+                if (m_enemys[i].m_bullets[j].m_Free == false)
+                {
+                    painter.drawPixmap(m_enemys[i].m_bullets[j].m_Xe,
+                                       m_enemys[i].m_bullets[j].m_Ye,
+                                       m_enemys[i].m_bullets[j].m_Bullet);
+                }
+            }
+>>>>>>> a3360dcda2f7081c1d5798175957bfbb12eb66ce
         }
     }
 
@@ -302,8 +362,15 @@ void Mainsence::paintEvent(QPaintEvent *)
 
 }
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+void Mainsence1::mouseMoveEvent(QMouseEvent *event)
+=======
+>>>>>>> a3360dcda2f7081c1d5798175957bfbb12eb66ce
 void Mainsence::mouseMoveEvent(QMouseEvent *event)
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
 {
     QPointF pos = event->position();
     qreal x = pos.x() - m_hero.m_Rect.width()*0.5;
@@ -330,7 +397,11 @@ void Mainsence::mouseMoveEvent(QMouseEvent *event)
     m_hero.setPosition(x,y);
 }
 
+<<<<<<< HEAD
+void Mainsence1::enemyToScene()
+=======
 void Mainsence::enemyToScene()
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
 {
     m_recorder++;
     //未达到出场间隔 直接return
@@ -356,7 +427,11 @@ void Mainsence::enemyToScene()
     }
 }
 
+<<<<<<< HEAD
+void Mainsence1::collisionDetection()
+=======
 void Mainsence::collisionDetection()
+>>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
 {
     // 检查关卡升级
     checkLevelUp();

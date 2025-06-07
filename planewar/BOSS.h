@@ -1,12 +1,13 @@
-#ifndef ENEMYPLANE_H
-#define ENEMYPLANE_H
+#ifndef BOSS_H
+#define BOSS_H
 #include <QPixmap>
+#include "BOSSbullet.h"
 #include "config.h"
 
-class EnemyPlane
+class BOSS
 {
 public:
-    EnemyPlane();
+    BOSS();
 
     //更新坐标
     void updatePosition();
@@ -20,23 +21,18 @@ public:
     int getHealth() const;
     //设置血量
     void setHealth(int health);
-    //设置速度
-    void setSpeed(int speed);
     //减少血量
     void reduceHealth(int damage = 1);
     //判断敌机是否存活
     bool isAlive() const;
     //重置敌机状态
     void reset();
+    //设置子弹伤害
+    void setBulletDamage(int damage);
     //-----------------------------------------------------------------------5.22
 
     //敌机资源对象
-<<<<<<< HEAD
-    QPixmap m_enemy1;
-    QPixmap m_enemy2;
-=======
     QPixmap m_enemy;
->>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
 
     //位置
     int m_X;
@@ -50,16 +46,17 @@ public:
 
     //速度
     int m_Speed;
-
     //------------------------------------------------------
+    //子弹数组
+    BOSSbullet m_bullets[ENEMY_BULLET_NUM];
+    //发射间隔记录
+    int m_shootTimer;
 private:
     // 敌机血量
     int m_health;
     // 最大血量
-    const int m_maxHealth = 100;
-    // 敌机速度
-    int m_speed;
+    const int m_maxHealth = 1000;
     //------------------------------------------------------5.22
 };
 
-#endif // ENEMYPLANE_H
+#endif // BOSS_H

@@ -1,18 +1,10 @@
-#include "Map1.h"
+#include "BOSSMap.h"
 #include "config.h"
 
-<<<<<<< HEAD
-Map1::Map1() {
-=======
-<<<<<<< HEAD
-Map1::Map1() {
-=======
-Map::Map() {
->>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
->>>>>>> a3360dcda2f7081c1d5798175957bfbb12eb66ce
+BOSSMap::BOSSMap() {
     //初始化地图加载对象
-    m_map1.load(MAP_PATH1);
-    m_map2.load(MAP_PATH1);
+    m_map1.load(MAP_PATH3);
+    m_map2.load(MAP_PATH3);
 
     //y轴初始化坐标
     m_map1_posY = -GAME_HEIGHT;
@@ -22,15 +14,7 @@ Map::Map() {
     m_scroll_speed = MAP_SCROLL_SPEED;
 }
 
-<<<<<<< HEAD
-void Map1::mapPosition()
-=======
-<<<<<<< HEAD
-void Map1::mapPosition()
-=======
-void Map::mapPosition()
->>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
->>>>>>> a3360dcda2f7081c1d5798175957bfbb12eb66ce
+void BOSSMap::mapPosition()
 {
     //处理第一张图片滚动位置
     m_map1_posY += m_scroll_speed;

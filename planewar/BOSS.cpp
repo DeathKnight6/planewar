@@ -1,21 +1,16 @@
-#include "Enemyplane.h"
+#include "BOSS.h"
 #include "config.h"
 #include <QRandomGenerator>
 
-EnemyPlane::EnemyPlane()
+BOSS::BOSS()
 {
     //--------------------------------------------------
     // 初始化血量
     m_health = m_maxHealth;
     //--------------------------------------------------5.22
     //敌机资源加载
-<<<<<<< HEAD
-    m_enemy1.load(ENEMY_PATH1);
-    m_enemy2.load(ENEMY_PATH2);
-=======
-    m_enemy.load(ENEMY_PATH);
+    m_enemy.load(BOSS_PATH);
 
->>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
     //敌机位置
     m_X = 0;
     m_Y = 0;
@@ -23,32 +18,17 @@ EnemyPlane::EnemyPlane()
     //敌机状态
     m_Free = true;
 
-    //敌机速度
-    m_Speed = ENEMY_SPEED;
 
     //敌机矩形框
-<<<<<<< HEAD
-    m_Rect.setWidth(m_enemy1.width());
-    m_Rect.setHeight(m_enemy1.height());
-    m_Rect.setWidth(m_enemy2.width());
-    m_Rect.setHeight(m_enemy2.height());
-=======
     m_Rect.setWidth(m_enemy.width());
     m_Rect.setHeight(m_enemy.height());
->>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
     m_Rect.moveTo(m_X,m_Y);
 }
 
-<<<<<<< HEAD
-=======
 //发射子弹
-void EnemyPlane::shoot()
+void BOSS::shoot()
 {
     // 射击间隔控制
-<<<<<<< HEAD
-    int m_shootTimer = 0;
-=======
->>>>>>> a8bb9635c82d0e3b992904b4a550a601c4f9fa07
     m_shootTimer++;
     if (m_shootTimer < ENEMY_SHOOT_INTERVAL) {
         return;
@@ -58,7 +38,7 @@ void EnemyPlane::shoot()
 
     // 随机发射子弹（增加游戏趣味性）
     if (QRandomGenerator::global()->bounded(100) < 30) {
-       return;
+        return;
     }
 
     // 发射子弹
@@ -74,7 +54,7 @@ void EnemyPlane::shoot()
 }
 
 //设置敌机子弹伤害
-void EnemyPlane::setBulletDamage(int damage)
+void BOSS::setBulletDamage(int damage)
 {
     for (int i = 0; i < ENEMY_BULLET_NUM; i++)
     {
@@ -82,8 +62,7 @@ void EnemyPlane::setBulletDamage(int damage)
     }
 }
 
->>>>>>> a3360dcda2f7081c1d5798175957bfbb12eb66ce
-void EnemyPlane::updatePosition()
+void BOSS::updatePosition()
 {
     //空闲状态敌机 不计算坐标
     if(m_Free)
@@ -101,40 +80,35 @@ void EnemyPlane::updatePosition()
     }
 }
 //-----------------------------------------------------------------------------
-int EnemyPlane::getHealth() const
+int BOSS::getHealth() const
 {
     //获取血量
     return m_health;
 }
 
-void EnemyPlane::setHealth(int health)
+void BOSS::setHealth(int health)
 {
     //设置血量
     m_health = qBound(0, health, m_maxHealth);//设置health的最小值和最大值
 }
 
-void EnemyPlane::setSpeed(int speed)
-{
-    //设置速度
-    m_speed = ENEMY_SPEED;
-}
-
-void EnemyPlane::reduceHealth(int damage)
+void BOSS::reduceHealth(int damage)
 {
     //减少血量
     m_health = qMax(0, m_health - damage);//用于比较两者大小，取值较大的一个
 }
 
-bool EnemyPlane::isAlive() const
+bool BOSS::isAlive() const
 {
     //判断飞机是否存活
     return m_health > 0;
 }
 
-void EnemyPlane::reset()
+void BOSS::reset()
 {
     //重置飞机状态
     m_health = m_maxHealth;
     m_Free = true;
+    m_shootTimer = 0;
 }
 //------------------------------------------------------------------------
