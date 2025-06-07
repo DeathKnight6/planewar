@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/">
+        <file>beijing/baozha.png</file>
+        <file>beijing/zidan.png</file>
+        <file>beijing/beijing02.jpg</file>
+        <file>beijing/tubiao01.2.0.png</file>
+        <file>beijing/bomb1.10.png</file>
+        <file>beijing/bomb1.2.png</file>
+        <file>beijing/bomb1.3.png</file>
+        <file>beijing/bomb1.4.png</file>
+        <file>beijing/baozhayinxiao01.wav</file>
+        <file>beijing/bgm001.wav</file>
+        <file>beijing/startbackground.jpg</file>
+        <file>beijing/beijing001.png</file>
+        <file>beijing/beijing002.png</file>
+        <file>beijing/beijing003.png</file>
+        <file>beijing/diji001.png</file>
+        <file>beijing/diji002.png</file>
+        <file>beijing/dijiBoss.png</file>
+        <file>beijing/icon_9qxh2l2sxns/kaishiyouxi.png</file>
+        <file>beijing/icon_9qxh2l2sxns/tuichuyouxi.png</file>
+    </qresource>
+    <qresource prefix="/new/prefix1"/>
+</RCC>
